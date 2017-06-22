@@ -5,6 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
+//services
+import { PostCommentService } from './services/post-comment-service.service';
+
+let services = [
+  PostCommentService,
+]
+
 @NgModule({
   declarations: [
     AppComponent
@@ -14,7 +21,9 @@ import { AppComponent } from './app.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    ...services,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
